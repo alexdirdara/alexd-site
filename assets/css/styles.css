@@ -397,6 +397,28 @@ strong { font-weight: 700; color: var(--ink); }
 .faq-answer p:last-child { margin-bottom: 0; }
 .faq-answer a { color: var(--green-700); font-weight: 700; }
 
+/* Quiz band (home page) ---------------------------------------------------- */
+.quiz-band {
+  position: relative; overflow: hidden; display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+  gap: clamp(20px, 4vw, 44px); background: var(--green-900); color: var(--cream);
+  border-radius: var(--radius-lg); padding: clamp(28px, 4vw, 44px) clamp(24px, 5vw, 56px);
+}
+.quiz-band-orb {
+  width: 96px; height: 96px; border-radius: 50%; flex-shrink: 0;
+  background: radial-gradient(circle at 34% 30%, #f4eee2 0%, #c6d4bf 28%, #8ea78a 62%, #557457 100%);
+  box-shadow: 0 0 44px 12px rgba(142, 167, 138, .3);
+}
+.quiz-band-copy { min-width: 0; }
+.quiz-band .eyebrow { color: var(--sage-400); margin-bottom: 10px; }
+.quiz-band h2 { color: var(--cream); font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 10px; }
+.quiz-band h2 .hl { color: var(--sage-200); }
+.quiz-band p { margin: 0; color: rgba(244, 238, 226, .8); max-width: 560px; }
+@media (max-width: 860px) {
+  .quiz-band { grid-template-columns: 1fr; text-align: left; }
+  .quiz-band-orb { width: 64px; height: 64px; }
+  .quiz-band .btn { justify-self: start; }
+}
+
 /* Closing CTA band -------------------------------------------------------- */
 .closing {
   background: var(--green-900); color: var(--cream);
