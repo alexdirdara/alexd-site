@@ -231,6 +231,7 @@
   var s1 = [], s2 = [], priority = null, history = [], current = 'intro', sharedKey = null;
   var stage = document.getElementById('stage');
   var bar = document.querySelector('.q2-progress');
+  var headBook = document.querySelector('[data-head-book]');
 
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
@@ -276,6 +277,10 @@
   function render() {
     var isReport = current === 'report' || current === 'shared';
     document.body.classList.toggle('report-mode', isReport);
+    // Their own results (not a shared link, not Frankie) get the booking button in the top bar
+    var ownReport = current === 'report' && totalScore() > 0;
+    document.body.classList.toggle('report-full', ownReport);
+    if (ownReport) headBook.href = calendlyURL(primary());
     var done = current.charAt(0) === 'q' ? Number(current.slice(1)) : (current === 'report' ? TOTAL : 0);
     bar.querySelector('span').style.width = (done / TOTAL * 100) + '%';
     bar.setAttribute('aria-valuenow', done);
@@ -502,6 +507,7 @@
         panel.setAttribute('aria-labelledby', 'tab-' + priority);
         var book = stage.querySelector('[data-book]');
         if (book) book.href = calendlyURL(primary());
+        headBook.href = calendlyURL(primary());
         var cost = stage.querySelector('[data-cost]');
         if (cost) cost.textContent = costPhrase();
       });
