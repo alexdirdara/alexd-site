@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Start (/start): the shareable one-pager.
+   Builds on styles.css. Hook + video, two cards, then the booking embed.
+   ========================================================================== */
+
+/* Hook: dark green box, text left, video right */
+.start-hero { padding: clamp(20px, 3vw, 36px) 0 0; }
+.hook {
+  position: relative; overflow: hidden; border-radius: var(--radius-lg); background: var(--green-900); color: var(--cream);
+  padding: clamp(28px, 5vw, 64px); display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(28px, 5vw, 64px); align-items: center;
+}
+.hook::before {
+  content: ""; position: absolute; inset: -30% auto auto -10%; width: 640px; height: 520px;
+  background: radial-gradient(closest-side, rgba(142, 167, 138, .2), transparent); pointer-events: none;
+}
+.hook > * { position: relative; }
+.hook .eyebrow { color: var(--sage-400); }
+.hook h1 { color: var(--cream); font-size: clamp(2.3rem, 4.4vw, 3.5rem); line-height: 1.06; margin: 0 0 18px; text-wrap: balance; }
+.hook h1 .hl { color: var(--sage-200); }
+.hook .lead { color: rgba(244, 238, 226, .82); margin: 0 0 30px; max-width: 460px; }
+.hook-note { margin: 14px 0 0; font-size: .9rem; color: rgba(244, 238, 226, .62); }
+
+/* Portrait (same photo as the home hero), standing in until the welcome video is ready */
+.hook-photo { position: relative; margin: 0 22px 22px 0; justify-self: end; width: 100%; max-width: 420px; }
+.hook-photo::before {
+  content: ""; position: absolute; inset: 22px -22px -22px 22px; border-radius: var(--radius-lg);
+  background: var(--green-800); border: 1px solid rgba(142, 167, 138, .35);
+}
+.hook-photo img { position: relative; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-lg); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .6); }
+@media (max-width: 900px) {
+  .hook { grid-template-columns: 1fr; }
+  .hook-photo { justify-self: center; max-width: 340px; margin: 0 14px 14px 0; }
+  .hook-photo::before { inset: 14px -14px -14px 14px; }
+}
+
+/* Sounds familiar + results ------------------------------------------------ */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+.pair-card { border-radius: var(--radius-lg); padding: clamp(24px, 3.5vw, 38px); display: flex; flex-direction: column; }
+.pair-card h2 { font-size: clamp(1.5rem, 2.5vw, 1.95rem); margin: 0 0 20px; display: flex; align-items: center; gap: 12px; }
+.pair-card h2 .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.pair-card.symptoms { background: #f6ece3; border: 1px solid #e7cdb9; }
+.pair-card.symptoms .dot { background: var(--clay); }
+.pair-card.results { background: var(--sage-50); border: 1px solid var(--sage-200); }
+.pair-card.results .dot { background: var(--green-700); }
+@media (max-width: 860px) { .pair { grid-template-columns: 1fr; } }
+
+.symptom-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.symptom-list li {
+  display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start;
+  background: var(--surface); border: 1px solid #ecd9cb; border-radius: 14px; padding: 16px 18px;
+  font-size: 1.05rem; line-height: 1.5; color: var(--ink);
+}
+.symptom-list .ico { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #f6e2d6; color: var(--clay); }
+.symptom-list .ico svg { width: 14px; height: 14px; }
+
+.result-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.result-list li { background: var(--surface); border: 1px solid var(--sage-100); border-radius: 14px; padding: 14px 18px; }
+.result-label { display: block; font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--sage-600); margin-bottom: 4px; }
+.result-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.result-row .before { color: var(--muted); font-size: .98rem; }
+.result-row .arrow { color: var(--sage-400); font-weight: 700; }
+.result-row .after { font-family: var(--font-display); font-size: clamp(1.15rem, 1.8vw, 1.3rem); line-height: 1.3; color: var(--green-700); font-weight: 500; }
+/* Both cards end with a line and a button, pinned to the bottom so they line up */
+.results-foot { margin-top: auto; padding-top: 20px; }
+.results-foot p { color: var(--ink-soft); font-size: .98rem; margin: 0 0 14px; }
+
+/* Booking --------------------------------------------------------------------- */
+.book-head { text-align: center; max-width: 680px; margin: 0 auto 22px; }
+.book-head .eyebrow { justify-content: center; }
+.book-head h2 { margin-bottom: 8px; }
+.book-head p { color: var(--ink-soft); margin: 0; }
+.book-card {
+  background: var(--surface); border: 1px solid var(--line-soft); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); overflow: hidden; padding: 8px 0;
+}
+.calendly-inline-widget { min-width: 320px; height: 720px; }
+@media (max-width: 760px) { .calendly-inline-widget { height: 1020px; } }
+.book-fallback { text-align: center; font-size: .9rem; color: var(--muted); margin: 14px 0 0; }
+.book-fallback a { color: var(--green-700); font-weight: 700; }

@@ -12,10 +12,6 @@
   --bad-line: #e7cdb9;
 }
 
-/* Top bar: logo and the booking button only, at every width */
-.process-page .header-cta .btn.keep { display: inline-flex; }
-@media (max-width: 400px) { .process-page .brand span { display: none; } }
-
 .process-hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.5rem); max-width: 940px; }
 .process-hero .lead { font-size: clamp(1.15rem, 1.8vw, 1.35rem); }
 
@@ -230,16 +226,3 @@
 /* Closing CTA and where to go next ---------------------------------------- */
 .closing .question { font-family: var(--font-display); color: var(--cream); font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin: 30px auto 28px; }
 .closing strong { color: #fff; }
-.next-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: clamp(36px, 5vw, 56px); }
-.next-link {
-  display: flex; flex-direction: column; align-items: flex-start; gap: 14px; text-decoration: none;
-  background: var(--surface); border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm);
-  transition: border-color .2s, transform .2s;
-}
-.next-link:hover { border-color: var(--sage-400); transform: translateY(-2px); }
-.next-link p { margin: 0; color: var(--ink-soft); font-size: 1.04rem; }
-.next-link .go { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--green-700); }
-.next-link .go .arrow { transition: transform .2s; }
-.next-link:hover .go .arrow { transform: translateX(4px); }
-.home-link { text-align: center; margin-top: 28px; }
-@media (max-width: 760px) { .next-links { grid-template-columns: 1fr; } }
