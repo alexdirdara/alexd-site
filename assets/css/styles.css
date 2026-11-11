@@ -540,6 +540,8 @@ strong { font-weight: 700; color: var(--ink); }
 }
 .case-block h4 .dot { width: 8px; height: 8px; border-radius: 50%; }
 .case-block p { margin: 0; font-size: .98rem; line-height: 1.6; }
+.case-block p strong { font-weight: 700; color: var(--ink); }
+.case-featured .case-block p strong { color: var(--cream); }
 .case-roi {
   margin: 18px auto 0; text-align: center; border-radius: 14px; padding: 22px 26px; max-width: 760px;
 }
@@ -775,8 +777,34 @@ strong { font-weight: 700; color: var(--ink); }
 @media (max-width: 560px) {
   .states { grid-template-columns: 1fr; }
   .states-arrow { padding: 6px 0; }
-  .states-arrow svg { transform: rotate(90deg); }
 }
+#context-mismatch .equation { margin-top: 22px; }
+#context-mismatch .approach { margin-top: 24px; }
+.page-intro h1 { text-wrap: balance; }
+
+/* Goal discovery: compass, belief rows, the three compromises */
+.compass { width: 100%; height: auto; display: block; margin-bottom: 18px; }
+.compass .dial { fill: var(--sage-50); stroke: var(--sage-200); stroke-width: 1.5; }
+.compass .ticks line { stroke: var(--sage-400); stroke-width: 2; stroke-linecap: round; }
+.compass .chosen-line { stroke: var(--green-700); stroke-width: 2; stroke-dasharray: 5 5; }
+.compass .chosen-dot { fill: var(--green-700); }
+.compass .drift { fill: none; stroke: var(--clay); stroke-width: 2; stroke-dasharray: 4 5; stroke-linecap: round; }
+.compass .needle-front { fill: var(--clay); }
+.compass .needle-back { fill: var(--sage-200); }
+.compass .hub { fill: var(--surface); stroke: var(--ink-soft); stroke-width: 2; }
+.compass .lbl { font-family: var(--font-body); font-size: 14px; font-weight: 700; }
+.compass .lbl.chosen { fill: var(--green-700); }
+.compass .lbl.drifted { fill: var(--clay); }
+.shifts { list-style: none; margin: 0; padding: 18px 0 0; border-top: 1px dashed var(--line); display: grid; gap: 14px; }
+.shifts li { display: grid; gap: 2px; }
+.shifts .belief { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); }
+.shifts .becomes { font-size: .9rem; font-weight: 600; color: var(--clay); }
+.compromised { margin-top: clamp(40px, 6vw, 64px); }
+.compromised > h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); max-width: 720px; margin: 0 0 22px; text-wrap: balance; }
+.ways.three { grid-template-columns: repeat(3, 1fr); }
+.way p + p { margin-top: 12px; }
+.way .goal-shift { padding-top: 12px; border-top: 1px dashed var(--line); font-size: .92rem; font-weight: 700; color: var(--clay); }
+@media (max-width: 860px) { .ways.three { grid-template-columns: 1fr; } }
 
 /* People I've worked with: auto-scrolling greyscale names -------------------- */
 .logos { padding: clamp(40px, 6vw, 64px) 0 0; }
