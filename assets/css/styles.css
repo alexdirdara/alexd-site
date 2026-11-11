@@ -802,6 +802,7 @@ strong { font-weight: 700; color: var(--ink); }
 }
 
 /* How I work -------------------------------------------------------------- */
+.section-head .lead.full { max-width: none; }
 .ways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .way { background: var(--surface); border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 26px 24px; box-shadow: var(--shadow-sm); }
 .way-ico {
