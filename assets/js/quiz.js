@@ -5,7 +5,7 @@
   'use strict';
   document.documentElement.classList.remove('no-js');
 
-  var CALENDLY = 'https://calendly.com/dirdara/on-demand';
+  var CALENDLY = 'https://calendly.com/dirdara/gapmap';
   var PHASES = ['About you', 'Your pattern', 'The cost', "What you've tried", "What's next"];
   var ROMAN = ['I', 'II', 'III', 'IV', 'V'];
   var GLOW = [['72%', '18%'], ['28%', '22%'], ['78%', '70%'], ['22%', '76%'], ['55%', '12%']];

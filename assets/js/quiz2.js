@@ -5,7 +5,7 @@
   'use strict';
   document.documentElement.classList.remove('no-js');
 
-  var CALENDLY = 'https://calendly.com/dirdara/on-demand';
+  var CALENDLY = 'https://calendly.com/dirdara/gapmap';
   var ORDER = ['avery', 'bailey', 'parker', 'morgan', 'drew'];
 
   /* ------------------------------------------------------------- emblems */
